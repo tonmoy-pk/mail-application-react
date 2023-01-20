@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/mail-application/precache-manifest.96938b0eac5a3289748dbe32f17bce20.js"
+  "/mail-application-react/precache-manifest.ccd54460b0ba8d39fe282f2d386eb287.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/mail-application/index.html", {
+workbox.routing.registerNavigationRoute("/mail-application-react/index.html", {
   
   blacklist: [/^\/_/,/\/[^/]+\.[^/]+$/],
 });
