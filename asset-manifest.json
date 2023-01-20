@@ -1,0 +1,13 @@
+{
+  "main.css": "/mail-application/static/css/main.e3fd60fd.chunk.css",
+  "main.js": "/mail-application/static/js/main.700456bb.chunk.js",
+  "main.js.map": "/mail-application/static/js/main.700456bb.chunk.js.map",
+  "static/js/1.0f51f244.chunk.js": "/mail-application/static/js/1.0f51f244.chunk.js",
+  "static/js/1.0f51f244.chunk.js.map": "/mail-application/static/js/1.0f51f244.chunk.js.map",
+  "runtime~main.js": "/mail-application/static/js/runtime~main.b22999e4.js",
+  "runtime~main.js.map": "/mail-application/static/js/runtime~main.b22999e4.js.map",
+  "static/css/main.e3fd60fd.chunk.css.map": "/mail-application/static/css/main.e3fd60fd.chunk.css.map",
+  "index.html": "/mail-application/index.html",
+  "precache-manifest.96938b0eac5a3289748dbe32f17bce20.js": "/mail-application/precache-manifest.96938b0eac5a3289748dbe32f17bce20.js",
+  "service-worker.js": "/mail-application/service-worker.js"
+}
