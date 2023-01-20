@@ -1,6 +1,6 @@
 {
   "name": "tonmoy-romatoo-mail",
-  "homepage" : "https://tonmoy-pk.github.io/mail-application",
+  "homepage": "https://tonmoy-pk.github.io/mail-application-react",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -13,6 +13,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^14.4.3",
     "firebase": "^9.15.0",
+    "gh-pages": "^4.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.5",
