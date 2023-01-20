@@ -1,0 +1,42 @@
+.sidebaropt{
+    display: flex;
+    align-items: center;
+    height: 35px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 0px 25px;
+    margin-right: 20px;
+}
+.sidebaropt svg{
+    color: rgb(94, 94, 94);
+    font-size: 20px;
+    width: 20px;
+}
+
+.sidebaropt h4{
+    font-size: 14px;
+    flex: 1;
+    margin-left: 10px;
+    font-weight: normal;
+}
+
+.sidebaropt p{
+    opacity: 0;
+    color: rgb(94, 94, 94);
+    font-size: 12px;
+    
+}
+.sidebaropt--active{
+    background-color: rgb(231, 153, 148);
+}
+.sidebaropt:hover{
+    cursor: pointer;
+    background-color: whitesmoke;
+}
+.sidebaropt--active h4,
+.sidebaropt--active p,
+.sidebaropt--active svg{
+    color: rgb(107, 4, 4);
+    font-weight: bold;
+    opacity: 1;
+}
