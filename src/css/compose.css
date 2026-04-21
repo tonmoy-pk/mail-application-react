@@ -1,81 +1,156 @@
-.compose{
-    position: absolute;
+.compose {
+    position: fixed;
     bottom: 0;
-    right: 70px;
-    min-width: 500px;
-    border-radius: 10px 10px 0px 0px;
+    right: 24px;
+    width: 520px;
+    border-radius: 16px 16px 0 0;
     overflow: hidden;
-    box-shadow: 0px 0px 8px rgb(154, 154, 231);
-    background-color: white;
-}
-.compose .compose_header{
-    display: flex;
-    justify-content: space-between;
-    background: #333;
-    color: #fff;
-    align-items: center;
-    padding: 7px 15px;
-}
-.compose_header_left span{
-    font-size: 15px;
-}
-.compose_header_right{
-    display: flex;
-    align-items: center;
-}
-.compose_header_left{
-    display: flex;
-    align-items: center;
-}
-.compose .compose_header .compose_header_right svg{
-    font-size: 18px;
-    margin-left: 10px;
-    transition: 0.2s linear 0s;
-    padding: 3px;
-}
-/* .compose_header_right svg:nth-child(2) path{
-    transform: rotate(45deg);
-    transform-origin: center;
-} */
-.compose .compose_header .compose_header_right svg:hover{
-    background: #545454;
-    cursor: pointer;
-}
-.compose_body{
-    display: flex;
-}
-.compose_bodyform{
+    box-shadow: 0 8px 30px rgba(0,0,0,0.25), 0 2px 8px rgba(0,0,0,0.15);
+    background-color: #fff;
+    z-index: 200;
     display: flex;
     flex-direction: column;
+    animation: slideUp 0.2s ease-out;
 }
-.compose_bodyform input, textarea{
+
+@keyframes slideUp {
+    from { transform: translateY(100%); opacity: 0; }
+    to   { transform: translateY(0);    opacity: 1; }
+}
+
+.compose .compose_header {
+    display: flex;
+    justify-content: space-between;
+    background: #404040;
+    color: #fff;
+    align-items: center;
+    padding: 10px 16px;
+    cursor: grab;
+}
+
+.compose_header_left span {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+}
+
+.compose_header_right {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.compose_header_left {
+    display: flex;
+    align-items: center;
+}
+
+.compose .compose_header .compose_header_right svg {
+    font-size: 18px;
+    border-radius: 4px;
+    padding: 4px;
+    transition: background-color 0.15s;
+    cursor: pointer;
+    color: #e0e0e0;
+}
+
+.compose .compose_header .compose_header_right svg:hover {
+    background: rgba(255,255,255,0.15);
+    color: #fff;
+}
+
+.compose_body {
+    display: flex;
+}
+
+.compose_bodyform {
+    display: flex;
+    flex-direction: column;
     width: 100%;
-    height: 40px;
+}
+
+.compose_bodyform input {
+    width: 100%;
+    height: 44px;
     outline: 0;
-    border: 0px;
-    box-shadow: inset 0 -1px 0 0 rgb(100 121 143/12%);
-    padding: 0px 10px;
+    border: 0;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 0 16px;
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+    color: #202124;
+    background: #fff;
+    transition: border-color 0.2s;
 }
-.compose_bodyform textarea{
-    height: 320px;
-    margin-top: 10px;
+
+.compose_bodyform input:focus {
+    border-bottom-color: #0b57d0;
 }
-.compose .compose_footer{
+
+.compose_bodyform input::placeholder {
+    color: #9aa0a6;
+}
+
+.compose_bodyform textarea {
+    width: 100%;
+    height: 280px;
+    outline: 0;
+    border: 0;
+    padding: 12px 16px;
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+    color: #202124;
+    resize: none;
+    line-height: 1.6;
+}
+
+.compose_bodyform textarea::placeholder {
+    color: #9aa0a6;
+}
+
+.compose .compose_footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 12px 10px;
+    padding: 8px 12px 16px;
+    border-top: 1px solid #f1f3f4;
 }
-.compose_footer button{
-    /* display: flex; */
-    
+
+.compose_footer button {
     cursor: pointer;
     border: 0;
-    background-color: rgb(5, 110, 196);
-    border-radius: 5px;
-    padding: 10px;
-    
+    background-color: #0b57d0;
+    color: #fff;
+    border-radius: 20px;
+    padding: 8px 22px;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0.3px;
+    transition: background-color 0.2s, box-shadow 0.2s;
+    box-shadow: 0 1px 3px rgba(11,87,208,0.3);
 }
-.compose .compose_footer svg:hover{
+
+.compose_footer button:hover {
+    background-color: #0a4fbf;
+    box-shadow: 0 2px 6px rgba(11,87,208,0.4);
+}
+
+.compose .compose_footer svg {
+    color: #5f6368;
     cursor: pointer;
+    transition: color 0.15s;
+}
+
+.compose .compose_footer svg:hover {
+    color: #202124;
+}
+
+@media (max-width: 768px) {
+    .compose {
+        width: calc(100% - 16px);
+        right: 8px;
+        left: 8px;
+        border-radius: 16px 16px 0 0;
+    }
 }

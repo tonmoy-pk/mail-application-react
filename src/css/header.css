@@ -1,42 +1,120 @@
-.header{
+.header {
     display: grid;
-    grid-template-columns: 250px auto 200px;
-    height: 50px;
-    align-items: center; 
-    border-bottom: 1px solid whitesmoke;
-    padding: 10px;
+    grid-template-columns: 256px 1fr 220px;
+    height: 64px;
+    align-items: center;
+    background-color: #f6f8fc;
+    padding: 0 8px;
+    border-bottom: 1px solid #e0e0e0;
+    position: sticky;
+    top: 0;
+    z-index: 50;
 }
-.header_left{
+
+.header_left {
     display: flex;
     align-items: center;
+    gap: 4px;
+    padding-left: 8px;
 }
-.header_left img{
-    border-radius: 20px;
+
+.header_left img {
+    border-radius: 4px;
+    height: 40px;
+    width: auto;
 }
-.header_middle{
+
+.header_left span {
+    font-size: 22px;
+    font-weight: 400;
+    color: #5f6368;
+    letter-spacing: -0.5px;
+    margin-left: 4px;
+}
+
+.header_left span b {
+    color: #202124;
+    font-weight: 500;
+}
+
+.header_middle {
     display: flex;
-    flex: 0.7;
+    justify-content: center;
+    padding: 0 16px;
 }
-.search_mail{
-    background-color: whitesmoke;
-    border-radius: 10px;
+
+.search_mail {
+    background-color: #eaf1fb;
+    border-radius: 24px;
     display: flex;
-    flex: 0.7;
+    align-items: center;
+    width: 100%;
+    max-width: 720px;
+    height: 46px;
+    padding: 0 4px;
+    transition: background-color 0.2s, box-shadow 0.2s;
 }
-.header_middle input{
+
+.search_mail:focus-within {
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2), 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.header_middle input {
     border: 0;
     background: transparent;
     outline: 0;
     flex: 1;
-    font-size: 15px;
-    letter-spacing: 1px;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    color: #202124;
+    padding: 0 8px;
 }
-.header_right{
+
+.header_middle input::placeholder {
+    color: #5f6368;
+}
+
+.header_right {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
+    gap: 4px;
+    padding-right: 8px;
 }
-.header_right .MuiAvatar-root{
-    height: 30px;
-    width: 30px;
-    border-radius: 300px;
+
+.header_right .MuiAvatar-root {
+    height: 34px;
+    width: 34px;
+    cursor: pointer;
+    margin-left: 4px;
+}
+
+.header_right .MuiIconButton-root {
+    color: #5f6368;
+    transition: background-color 0.2s;
+}
+
+.header_right .MuiIconButton-root:hover {
+    background-color: rgba(0,0,0,0.06);
+}
+
+@media (max-width: 768px) {
+    .header {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 4px;
+        gap: 8px;
+    }
+    .header_left img,
+    .header_left span {
+        display: none;
+    }
+    .header_middle {
+        flex: 1;
+        padding: 0;
+    }
+    .header_right .MuiIconButton-root:not(:last-of-type) {
+        display: none;
+    }
 }

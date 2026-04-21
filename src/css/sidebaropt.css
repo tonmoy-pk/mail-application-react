@@ -1,42 +1,56 @@
-.sidebaropt{
+.sidebaropt {
     display: flex;
     align-items: center;
-    height: 35px;
-    border-top-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    padding: 0px 25px;
-    margin-right: 20px;
+    height: 40px;
+    border-radius: 0 20px 20px 0;
+    padding: 0 16px 0 26px;
+    margin-right: 16px;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+    position: relative;
 }
-.sidebaropt svg{
-    color: rgb(94, 94, 94);
+
+.sidebaropt svg {
+    color: #444746;
     font-size: 20px;
     width: 20px;
+    flex-shrink: 0;
 }
 
-.sidebaropt h4{
+.sidebaropt h4 {
     font-size: 14px;
+    font-weight: 400;
     flex: 1;
-    margin-left: 10px;
-    font-weight: normal;
+    margin: 0 0 0 16px;
+    color: #202124;
+    white-space: nowrap;
 }
 
-.sidebaropt p{
-    opacity: 0;
-    color: rgb(94, 94, 94);
+.sidebaropt p {
     font-size: 12px;
-    
+    font-weight: 500;
+    color: #202124;
+    margin: 0;
+    min-width: 24px;
+    text-align: right;
 }
-.sidebaropt--active{
-    background-color: rgb(231, 153, 148);
+
+.sidebaropt:hover {
+    background-color: #e2e3e7;
 }
-.sidebaropt:hover{
-    cursor: pointer;
-    background-color: whitesmoke;
+
+.sidebaropt--active {
+    background-color: #d3e3fd;
 }
-.sidebaropt--active h4,
-.sidebaropt--active p,
-.sidebaropt--active svg{
-    color: rgb(107, 4, 4);
-    font-weight: bold;
-    opacity: 1;
+
+.sidebaropt--active h4 {
+    font-weight: 700;
+}
+
+.sidebaropt--active svg {
+    color: #0b57d0;
+}
+
+.sidebaropt--active p {
+    font-weight: 700;
 }

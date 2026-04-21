@@ -6,23 +6,58 @@ import Sidebaropt from './Sidebaropt';
 import InboxIcon from '@mui/icons-material/Inbox';
 import SendIcon from '@mui/icons-material/Send';
 import DraftsIcon from '@mui/icons-material/Drafts';
-import CategoryIcon from '@mui/icons-material/Category';
 import MailIcon from '@mui/icons-material/Mail';
-import { useDispatch } from 'react-redux';
-import { openSendMessage } from './features/mailSlice';
-
+import { useDispatch, useSelector } from 'react-redux';
+import {
+  openSendMessage,
+  selectSidebarIsOpen,
+  selectActiveFilter,
+  setActiveFilter
+} from './features/mailSlice';
 
 function Sidebar() {
+  const dispatch = useDispatch();
+  const sidebarIsOpen = useSelector(selectSidebarIsOpen);
+  const activeFilter = useSelector(selectActiveFilter);
 
-  const dispatch = useDispatch()
+  const handleFilter = (filter) => {
+    dispatch(setActiveFilter(filter));
+  };
+
   return (
-    <div className="sidebar">
-      <Button startIcon={<AddToPhotosIcon></AddToPhotosIcon>} className="compose_btn" onClick={()=>dispatch(openSendMessage())}>Create</Button>
-      <Sidebaropt Icon={MailIcon} title="All" number="4" isactive={true}/>
-      <Sidebaropt Icon={InboxIcon} title="Inbox" number="22"/>
-      <Sidebaropt Icon={SendIcon} title="Sent" number="4"/>
-      <Sidebaropt Icon={DraftsIcon} title="Draft" number="24"/>
-      <Sidebaropt Icon={CategoryIcon} title="Category" number="4"/>
+    <div className={`sidebar ${sidebarIsOpen ? 'sidebar--open' : ''}`}>
+      <Button
+        startIcon={<AddToPhotosIcon />}
+        className="compose_btn"
+        onClick={() => dispatch(openSendMessage())}
+      >
+        Compose
+      </Button>
+
+      <Sidebaropt
+        Icon={MailIcon}
+        title="All Mail"
+        isactive={activeFilter === 'all'}
+        onClick={() => handleFilter('all')}
+      />
+      <Sidebaropt
+        Icon={InboxIcon}
+        title="Inbox"
+        isactive={activeFilter === 'inbox'}
+        onClick={() => handleFilter('inbox')}
+      />
+      <Sidebaropt
+        Icon={SendIcon}
+        title="Sent"
+        isactive={activeFilter === 'sent'}
+        onClick={() => handleFilter('sent')}
+      />
+      <Sidebaropt
+        Icon={DraftsIcon}
+        title="Drafts"
+        isactive={activeFilter === 'drafts'}
+        onClick={() => handleFilter('drafts')}
+      />
     </div>
   )
 }

@@ -1,0 +1,65 @@
+.emaillist {
+    background-color: #fff;
+    border-radius: 16px;
+    margin: 16px 16px 16px 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.emaillist_empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    padding: 48px 24px;
+    color: #5f6368;
+    gap: 12px;
+}
+
+.emaillist_empty svg {
+    font-size: 64px;
+    color: #dadce0;
+}
+
+.emaillist_empty p {
+    font-size: 16px;
+    margin: 0;
+}
+
+.emaillist_empty_hint {
+    font-size: 13px !important;
+    color: #9aa0a6 !important;
+    margin-top: 8px !important;
+    max-width: 280px;
+    text-align: center;
+}
+
+.emaillist_error {
+    margin: 20px;
+    padding: 16px 20px;
+    background-color: #fce8e6;
+    border-left: 4px solid #d93025;
+    border-radius: 8px;
+    color: #c5221f;
+}
+
+.emaillist_error p {
+    margin: 4px 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.emaillist_error a {
+    color: #0b57d0;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .emaillist {
+        margin: 8px;
+        border-radius: 12px;
+    }
+}

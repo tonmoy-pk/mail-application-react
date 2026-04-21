@@ -5,12 +5,15 @@ import SearchIcon from '@mui/icons-material/Search';
 import "./css/header.css";
 import AppsIcon from '@mui/icons-material/Apps';
 import SettingsIcon from '@mui/icons-material/Settings';
+import { useDispatch } from 'react-redux';
+import { toggleSidebar } from './features/mailSlice';
 
 const Header = ()=>{
+    const dispatch = useDispatch();
     return(
         <div className="header">
             <div className="header_left">
-                <IconButton>
+                <IconButton onClick={() => dispatch(toggleSidebar())}>
                     <ReorderIcon></ReorderIcon>
                 </IconButton>
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6IiChrJlnsjRnpaz4y87uhf1P1eNZeZAP8A&usqp=CAU" alt="logo" width="45px" height="40px"/>
