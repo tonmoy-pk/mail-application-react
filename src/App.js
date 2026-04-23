@@ -18,20 +18,17 @@ function App() {
     <Router>
       <div className="App">
         <Header/>
-      
         <div className='app_body'>
           <Sidebar/>
           <Routes>
-            <Route exact path='/' element={<Email/>}></Route>
-
-            <Route path='/mail' element={<Emaildetails/>}></Route>
-          </Routes>  
+            <Route path='/'        element={<Email filter="all" />} />
+            <Route path='/inbox'   element={<Email filter="inbox" />} />
+            <Route path='/sent'    element={<Email filter="sent" />} />
+            <Route path='/drafts'  element={<Email filter="drafts" />} />
+            <Route path='/mail'    element={<Emaildetails />} />
+          </Routes>
         </div>
-      
-        {
-          isMessageopen && <Compose/>
-        }
-          
+        {isMessageopen && <Compose/>}
       </div>
     </Router>
   );
