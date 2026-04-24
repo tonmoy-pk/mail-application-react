@@ -7,7 +7,7 @@ import { selectSendMessageIsOpen } from './features/mailSlice';
 import Header from './Header';
 import Sidebar from './Sidebar';
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Routes,
   Route
 } from "react-router-dom";
